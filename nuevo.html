@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nuevo domicilio · App Domicilios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/nuevo.css">
+</head>
+<body>
+  <main id="contenido" class="pantalla" hidden>
+    <div class="barra-superior">
+      <a href="menu.html" class="btn-volver" aria-label="Volver al menú">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg>
+      </a>
+      <h1>Nuevo domicilio</h1>
+    </div>
+
+    <div id="exito" class="exito" hidden></div>
+
+    <!-- 1. Factura -->
+    <section class="paso" id="paso-factura">
+      <div class="paso-titulo"><span class="numero">1</span>N.º de factura</div>
+      <div class="contador">
+        <button type="button" id="factura-menos" aria-label="Restar uno">−</button>
+        <input id="factura" class="input-grande" inputmode="numeric" autocomplete="off">
+        <button type="button" id="factura-mas" aria-label="Sumar uno">+</button>
+      </div>
+      <div class="ayuda">Se llena con el número siguiente. Corrige con − o + si no coincide.</div>
+    </section>
+
+    <!-- 2. Mensajero -->
+    <section class="paso" id="paso-mensajero">
+      <div class="paso-titulo"><span class="numero">2</span>¿Quién lo lleva?</div>
+      <div class="dos" id="lista-mensajeros"></div>
+    </section>
+
+    <!-- 3. Barrio -->
+    <section class="paso" id="paso-barrio">
+      <div class="paso-titulo"><span class="numero">3</span>Barrio</div>
+      <div class="fila" id="lista-barrios"></div>
+      <input id="barrio-nuevo" class="input-texto" placeholder="Escribe el barrio" hidden>
+    </section>
+
+    <!-- 4. Valor productos -->
+    <section class="paso" id="paso-productos">
+      <div class="paso-titulo"><span class="numero">4</span>Valor de los productos</div>
+      <input id="productos" class="input-grande input-plata" inputmode="numeric" placeholder="$0" autocomplete="off">
+    </section>
+
+    <!-- 5. Valor domicilio -->
+    <section class="paso" id="paso-domicilio">
+      <div class="paso-titulo"><span class="numero">5</span>Valor del domicilio</div>
+      <div class="cuatro" id="lista-tarifas"></div>
+      <input id="domicilio-otro" class="input-texto" inputmode="numeric" placeholder="Otro valor" hidden>
+    </section>
+
+    <!-- 6. Pago -->
+    <section class="paso" id="paso-pago">
+      <div class="paso-titulo"><span class="numero">6</span>¿Cómo paga el cliente?</div>
+      <div class="dos">
+        <button type="button" class="pago efectivo" data-pago="efectivo">Efectivo<small>El mensajero cobra</small></button>
+        <button type="button" class="pago nequi" data-pago="nequi">Nequi<small>Ya pagó</small></button>
+      </div>
+    </section>
+
+    <!-- 7. Gaseosa -->
+    <section class="paso" id="paso-gaseosa">
+      <div class="paso-titulo"><span class="numero">7</span>¿Lleva gaseosa?</div>
+      <div class="dos">
+        <button type="button" class="opcion gaseosa" data-gaseosa="si">Sí</button>
+        <button type="button" class="opcion gaseosa-no" data-gaseosa="no">No</button>
+      </div>
+    </section>
+
+    <!-- Resumen automático -->
+    <div class="resumen" id="resumen"></div>
+
+    <div id="error" class="error" hidden></div>
+
+    <button id="guardar" class="btn-principal" type="button">Guardar domicilio</button>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/sesion.js"></script>
+  <script src="js/nuevo.js"></script>
+</body>
+</html>

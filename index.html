@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar · App Domicilios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <main class="pantalla login">
+    <div class="logo" aria-hidden="true">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="1" y="7" width="13" height="10" rx="1"></rect>
+        <path d="M14 10h4l3 3v4h-7"></path>
+        <circle cx="6" cy="18" r="2"></circle>
+        <circle cx="17" cy="18" r="2"></circle>
+      </svg>
+    </div>
+
+    <div>
+      <div class="subtitulo">App Domicilios</div>
+      <h1>Entrar</h1>
+    </div>
+
+    <form id="formulario" class="tarjeta">
+      <div class="campo">
+        <label for="correo">Correo</label>
+        <input id="correo" type="email" autocomplete="email" required>
+      </div>
+
+      <div class="campo">
+        <label for="clave">Contraseña</label>
+        <input id="clave" type="password" autocomplete="current-password" required>
+      </div>
+
+      <div id="error" class="error" hidden></div>
+
+      <button id="boton-entrar" class="btn-principal" type="submit">Entrar</button>
+    </form>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

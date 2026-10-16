@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menú · App Domicilios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <main id="contenido" class="pantalla" hidden>
+    <div class="encabezado">
+      <div>
+        <div id="fecha" class="subtitulo"></div>
+        <h1>¿Qué vas a hacer?</h1>
+      </div>
+      <button id="boton-salir" class="btn-salir" type="button">Salir</button>
+    </div>
+
+    <a href="nuevo.html" class="boton-grande">
+      <span class="icono">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>
+      </span>
+      <span>
+        <div class="titulo">Nuevo domicilio</div>
+        <div class="texto">Registrar un pedido</div>
+      </span>
+    </a>
+
+    <div class="cuadricula">
+      <a href="pedidos.html" class="mosaico">
+        <span class="icono" style="background:#E3EAF7">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="2" stroke-linecap="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"></path></svg>
+        </span>
+        <span>
+          <div class="titulo">Pedidos de hoy</div>
+          <div class="texto">Ver la lista del día</div>
+        </span>
+      </a>
+
+      <a href="cierre.html" class="mosaico">
+        <span class="icono" style="background:#DCEFE2">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#14532D" stroke-width="2" stroke-linecap="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2.5"></circle></svg>
+        </span>
+        <span>
+          <div class="titulo">Cierre del día</div>
+          <div class="texto">Cuentas con cada mensajero</div>
+        </span>
+      </a>
+
+      <a href="reportes.html" class="mosaico">
+        <span class="icono" style="background:#EAE3F5">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4C1D95" stroke-width="2" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>
+        </span>
+        <span>
+          <div class="titulo">Reportes</div>
+          <div class="texto">Ventas, Nequi, barrios</div>
+        </span>
+      </a>
+
+      <a href="mensajeros.html" class="mosaico">
+        <span class="icono" style="background:#E7EBE9">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B4541" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5M17 4.5a3.5 3.5 0 0 1 0 7M19 14.8c1.4.8 2.2 2.6 2.5 5.2"></path></svg>
+        </span>
+        <span>
+          <div class="titulo">Mensajeros</div>
+          <div class="texto">Agregar o editar</div>
+        </span>
+      </a>
+    </div>
+
+    <a href="respaldo.html" class="boton-oscuro">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"></path></svg>
+      <span>
+        <div class="titulo">Copia de seguridad</div>
+        <div class="texto">Exportar a Excel</div>
+      </span>
+    </a>
+
+    <div class="usuario">Sesión: <span id="usuario"></span></div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/sesion.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+</html>
