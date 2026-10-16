@@ -1,0 +1,66 @@
+/* ===== Pantalla: Cierre del día ===== */
+.selector-fecha {
+  height: 48px; width: 100%;
+  padding: 0 14px;
+  border: 1.5px solid #C9D1CC; border-radius: 14px;
+  background: var(--blanco);
+  font: 600 16px 'IBM Plex Sans', sans-serif; color: var(--tinta);
+}
+
+.cuenta {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 18px;
+  padding: 16px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+
+.cuenta .quien { font-size: 14px; color: var(--gris); }
+.cuenta .grande { font-family: 'Bricolage Grotesque', sans-serif; font-size: 40px; font-weight: 700; line-height: 1; }
+
+.estado {
+  align-self: flex-start;
+  height: 28px; padding: 0 10px;
+  border-radius: 8px;
+  font-size: 13px; font-weight: 700;
+  display: inline-flex; align-items: center;
+}
+
+.estado.pendiente { background: #FDEBD3; color: #7C2D12; }
+.estado.liquidado { background: #DCEFE2; color: #14532D; }
+
+.desglose { display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #E3E8E5; padding-top: 12px; font-size: 14px; }
+.desglose .linea { display: flex; justify-content: space-between; gap: 8px; }
+.desglose .linea b { font-family: 'IBM Plex Mono', monospace; }
+.desglose .suave { color: var(--gris); }
+.desglose .verde { font-weight: 600; }
+.desglose .morado { font-weight: 600; color: #4C1D95; }
+.desglose .final { font-weight: 700; font-size: 16px; border-top: 1px dashed #C9D1CC; padding-top: 8px; }
+
+.titulo-seccion { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gris); }
+
+.tabla-pedidos { background: var(--blanco); border: 1px solid var(--borde); border-radius: 14px; }
+
+.fila-pedido {
+  display: grid; grid-template-columns: 62px minmax(0, 1fr) 72px 84px;
+  align-items: center; gap: 6px;
+  padding: 10px 12px;
+  border-bottom: 1px solid #EEF1EE;
+  font-size: 13px;
+}
+
+.fila-pedido:last-child { border-bottom: 0; }
+.fila-pedido .mono { font-family: 'IBM Plex Mono', monospace; font-weight: 600; }
+.fila-pedido .derecha { text-align: right; }
+.fila-pedido .efectivo { color: #14532D; font-weight: 600; }
+.fila-pedido .nequi { color: #4C1D95; font-weight: 600; }
+
+.total-dia {
+  display: flex; justify-content: space-between; align-items: center; gap: 8px;
+  padding: 12px 14px; border-radius: 12px;
+  background: #DDE3DF; font-size: 14px;
+}
+
+.total-dia b { font-family: 'IBM Plex Mono', monospace; }
+
+#cuenta { display: flex; flex-direction: column; gap: 12px; }

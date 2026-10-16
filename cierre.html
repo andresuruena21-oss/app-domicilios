@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cierre del día · App Domicilios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/nuevo.css">
+  <link rel="stylesheet" href="css/pedidos.css">
+  <link rel="stylesheet" href="css/cierre.css">
+</head>
+<body>
+  <main id="contenido" class="pantalla" hidden>
+    <div class="barra-superior">
+      <a href="menu.html" class="btn-volver" aria-label="Volver al menú">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg>
+      </a>
+      <h1>Cierre del día</h1>
+    </div>
+
+    <!-- Día a cerrar (por defecto hoy) -->
+    <input type="date" id="dia" class="selector-fecha" aria-label="Día del cierre">
+
+    <!-- Un botón por mensajero (los pone el JavaScript) -->
+    <div class="segmento" id="pestanas"></div>
+
+    <!-- Cuenta del mensajero elegido -->
+    <div id="cuenta"></div>
+
+    <!-- Total de todos los mensajeros -->
+    <div class="total-dia" id="total-dia"></div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/sesion.js"></script>
+  <script src="js/cierre.js"></script>
+</body>
+</html>

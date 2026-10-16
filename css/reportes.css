@@ -1,0 +1,49 @@
+/* ===== Pantalla: Reportes ===== */
+.cifras { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+
+.cifra {
+  background: var(--blanco); border: 1px solid var(--borde);
+  border-radius: 14px; padding: 12px 14px;
+  display: flex; flex-direction: column; gap: 2px;
+}
+
+.cifra.oscura { background: var(--tinta); border-color: var(--tinta); color: var(--blanco); }
+.cifra span { font-size: 12px; color: var(--gris); }
+.cifra.oscura span { color: #B9C4BE; }
+.cifra b { font-family: 'IBM Plex Mono', monospace; font-size: 21px; font-weight: 600; }
+
+.bloque {
+  background: var(--blanco); border: 1px solid var(--borde);
+  border-radius: 14px; padding: 14px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+
+.bloque h2 { margin: 0; font-size: 15px; font-weight: 700; font-family: 'IBM Plex Sans', sans-serif; }
+
+.barra-doble { display: flex; height: 14px; border-radius: 7px; overflow: hidden; gap: 2px; background: var(--fondo); }
+.barra-doble .ef { background: #15803D; }
+.barra-doble .nq { background: #6D28D9; }
+
+.barra-simple { height: 10px; border-radius: 5px; background: var(--fondo); overflow: hidden; }
+.barra-simple div { height: 100%; border-radius: 5px; }
+
+.renglon { display: flex; justify-content: space-between; gap: 8px; font-size: 13px; }
+.renglon b { font-family: 'IBM Plex Mono', monospace; }
+.renglon .con-punto { display: inline-flex; align-items: center; gap: 6px; }
+.renglon.destacado { color: #4C1D95; font-weight: 600; border-top: 1px dashed #C9D1CC; padding-top: 8px; }
+
+.fila-barrio {
+  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) 24px 76px;
+  align-items: center; gap: 8px; font-size: 13px;
+}
+
+.fila-barrio .nombre { font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fila-barrio .num { font-family: 'IBM Plex Mono', monospace; text-align: right; }
+.fila-barrio .num.fuerte { font-weight: 600; }
+.fila-barrio .num.suave { color: var(--gris); }
+
+.tabla-mensajeros { width: 100%; border-collapse: collapse; font-size: 13px; }
+.tabla-mensajeros th { text-align: left; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gris); padding: 0 4px 6px; }
+.tabla-mensajeros td { padding: 8px 4px; border-top: 1px solid #EEF1EE; }
+.tabla-mensajeros .num { text-align: right; font-family: 'IBM Plex Mono', monospace; }
+.tabla-mensajeros th.num { font-family: inherit; }

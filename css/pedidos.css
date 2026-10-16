@@ -1,0 +1,134 @@
+/* ===== Pantalla: Pedidos de hoy ===== */
+.pantalla-lista { padding-bottom: 120px; }
+
+.resumen-dia {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;
+  background: var(--tinta); color: var(--blanco);
+  border-radius: 16px; padding: 12px 14px;
+}
+
+.resumen-dia span { display: block; font-size: 11px; color: #B9C4BE; }
+.resumen-dia b { font-family: 'IBM Plex Mono', monospace; font-size: 16px; }
+.resumen-dia .nequi b { color: #D8C8F5; }
+
+.segmento {
+  display: flex; gap: 4px; padding: 4px;
+  background: #DDE3DF; border-radius: 14px;
+  overflow-x: auto;
+}
+
+.segmento button {
+  flex: 1 0 auto;
+  height: 40px; padding: 0 14px;
+  border: 0; border-radius: 10px;
+  background: transparent;
+  font: 600 15px 'IBM Plex Sans', sans-serif; color: #3B4541;
+  cursor: pointer;
+}
+
+.segmento button.elegida { background: var(--blanco); color: var(--tinta); box-shadow: 0 1px 3px rgba(22, 32, 28, 0.15); }
+
+.filtros { display: flex; gap: 8px; overflow-x: auto; }
+
+.filtro {
+  flex-shrink: 0;
+  height: 38px; padding: 0 12px;
+  border: 1.5px solid #C9D1CC; border-radius: 19px;
+  background: var(--blanco);
+  font: 600 13px 'IBM Plex Sans', sans-serif; color: var(--tinta);
+  display: inline-flex; align-items: center; gap: 6px;
+  cursor: pointer;
+}
+
+.filtro.elegida { background: var(--tinta); border-color: var(--tinta); color: var(--blanco); }
+.punto { width: 8px; height: 8px; border-radius: 4px; }
+
+.lista { display: flex; flex-direction: column; gap: 8px; }
+
+.tarjeta-pedido {
+  width: 100%;
+  text-align: left;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+  padding: 12px 14px;
+  display: flex; flex-direction: column; gap: 8px;
+  font-family: inherit; color: var(--tinta);
+  cursor: pointer;
+}
+
+.tarjeta-pedido .arriba { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.tarjeta-pedido .barrio { font-size: 18px; font-weight: 700; }
+.tarjeta-pedido .total { font-family: 'IBM Plex Mono', monospace; font-size: 17px; font-weight: 600; }
+
+.etiquetas { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.etiqueta {
+  height: 26px; padding: 0 9px;
+  border-radius: 8px;
+  background: var(--fondo); color: #3B4541;
+  font-size: 12px; font-weight: 600;
+  display: inline-flex; align-items: center;
+}
+
+.etiqueta.mono { font-family: 'IBM Plex Mono', monospace; }
+.etiqueta.efectivo { background: #DCEFE2; color: #14532D; }
+.etiqueta.nequi { background: #EAE3F5; color: #4C1D95; }
+.etiqueta.gaseosa { background: #FDEBD3; color: #7C2D12; }
+
+.vacio {
+  text-align: center; color: var(--gris);
+  padding: 40px 16px;
+  font-size: 15px;
+}
+
+.btn-flotante {
+  position: fixed;
+  left: 50%; transform: translateX(-50%);
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  width: calc(100% - 32px); max-width: 448px;
+  height: 64px; border-radius: 18px;
+  background: var(--naranja); color: var(--blanco);
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  font-size: 19px; font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(22, 32, 28, 0.3);
+}
+
+/* Hoja de detalle (sale desde abajo) */
+.fondo-oscuro {
+  position: fixed; inset: 0;
+  background: rgba(22, 32, 28, 0.45);
+  z-index: 50;
+  display: flex; align-items: flex-end; justify-content: center;
+}
+
+.hoja {
+  width: 100%; max-width: 480px;
+  background: var(--blanco);
+  border-radius: 22px 22px 0 0;
+  padding: 20px 20px calc(20px + env(safe-area-inset-bottom, 0px));
+  display: flex; flex-direction: column; gap: 12px;
+}
+
+.hoja h2 { margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 24px; }
+
+.dato { display: flex; justify-content: space-between; gap: 12px; font-size: 15px; padding: 6px 0; border-bottom: 1px solid #EEF1EE; }
+.dato span { color: var(--gris); }
+.dato b { font-weight: 600; }
+
+.btn-secundario {
+  height: 52px; border-radius: 14px;
+  border: 1.5px solid #C9D1CC; background: var(--blanco);
+  font: 600 16px 'IBM Plex Sans', sans-serif; color: var(--tinta);
+  cursor: pointer;
+}
+
+.btn-borrar {
+  height: 52px; border-radius: 14px;
+  border: 1.5px solid #FCA5A5; background: #FEF2F2;
+  font: 600 16px 'IBM Plex Sans', sans-serif; color: #B91C1C;
+  cursor: pointer;
+}
+
+.btn-borrar.confirmar { background: #B91C1C; border-color: #B91C1C; color: var(--blanco); }

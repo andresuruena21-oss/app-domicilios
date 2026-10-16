@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pedidos de hoy · App Domicilios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/nuevo.css">
+  <link rel="stylesheet" href="css/pedidos.css">
+</head>
+<body>
+  <main id="contenido" class="pantalla pantalla-lista" hidden>
+    <div class="barra-superior">
+      <a href="menu.html" class="btn-volver" aria-label="Volver al menú">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg>
+      </a>
+      <div>
+        <div id="fecha" class="subtitulo"></div>
+        <h1>Pedidos de hoy</h1>
+      </div>
+    </div>
+
+    <!-- Resumen del día -->
+    <div class="resumen-dia">
+      <div><span>Pedidos</span><b id="total-pedidos">0</b></div>
+      <div><span>Efectivo</span><b id="total-efectivo">$0</b></div>
+      <div class="nequi"><span>Nequi a pagar</span><b id="total-nequi">$0</b></div>
+    </div>
+
+    <!-- Filtro por mensajero (los botones los pone el JavaScript) -->
+    <div class="segmento" id="filtro-mensajero"></div>
+
+    <!-- Filtro por tipo -->
+    <div class="filtros" id="filtro-tipo">
+      <button type="button" class="filtro elegida" data-tipo="todos">Todos</button>
+      <button type="button" class="filtro" data-tipo="efectivo"><span class="punto" style="background:#15803D"></span>Efectivo</button>
+      <button type="button" class="filtro" data-tipo="nequi"><span class="punto" style="background:#6D28D9"></span>Nequi</button>
+      <button type="button" class="filtro" data-tipo="gaseosa"><span class="punto" style="background:#B45309"></span>Gaseosa</button>
+    </div>
+
+    <!-- Lista de pedidos -->
+    <div class="lista" id="lista"></div>
+  </main>
+
+  <a href="nuevo.html" class="btn-flotante">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>
+    Nuevo domicilio
+  </a>
+
+  <!-- Detalle de un pedido (se abre al tocar una tarjeta) -->
+  <div id="detalle" class="fondo-oscuro" hidden>
+    <div class="hoja" role="dialog" aria-modal="true" aria-labelledby="detalle-titulo">
+      <h2 id="detalle-titulo"></h2>
+      <div id="detalle-datos"></div>
+      <button type="button" id="btn-borrar" class="btn-borrar">Borrar pedido</button>
+      <button type="button" id="btn-cerrar" class="btn-secundario">Cerrar</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/sesion.js"></script>
+  <script src="js/pedidos.js"></script>
+</body>
+</html>
