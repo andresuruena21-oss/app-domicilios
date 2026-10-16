@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Copia de seguridad · App Domicilios</title>
+    <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#C2410C">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/nuevo.css">
+  <link rel="stylesheet" href="css/cierre.css">
+  <link rel="stylesheet" href="css/reportes.css">
+  <link rel="stylesheet" href="css/respaldo.css">
+</head>
+<body>
+  <main id="contenido" class="pantalla" hidden>
+    <div class="barra-superior">
+      <a href="menu.html" class="btn-volver" aria-label="Volver al menú">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg>
+      </a>
+      <h1>Copia de seguridad</h1>
+    </div>
+
+    <div class="info">
+      Tus pedidos ya están guardados en la nube. Esta copia es un respaldo extra en un archivo de Excel que queda en tu celular o computador.
+    </div>
+
+    <div class="datos-copia">
+      <div class="cifra oscura"><span>Pedidos guardados</span><b id="total">—</b></div>
+      <div class="cifra"><span>Última copia</span><b id="ultima" style="font-size:18px;font-family:inherit">—</b></div>
+    </div>
+
+    <!-- Todo el historial -->
+    <button type="button" id="btn-todo" class="btn-oscuro-ancho">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"></path></svg>
+      Descargar todo el historial
+    </button>
+
+    <!-- Por fechas -->
+    <div class="bloque">
+      <h2>Descargar por fechas</h2>
+      <div class="rango">
+        <label>Desde<input type="date" id="desde" class="selector-fecha"></label>
+        <label>Hasta<input type="date" id="hasta" class="selector-fecha"></label>
+      </div>
+      <button type="button" id="btn-rango" class="btn-principal">Descargar este rango</button>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/sesion.js"></script>
+  <script src="js/exportar.js"></script>
+  <script src="js/respaldo.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+/* ===== Pantalla: Copia de seguridad ===== */
+.info {
+  background: #E3EAF7; color: #1E3A8A;
+  border-radius: 14px; padding: 12px 14px;
+  font-size: 14px; line-height: 1.45;
+}
+
+.datos-copia { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+
+.rango { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.rango label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: #3B4541; }
+
+.btn-oscuro-ancho {
+  height: 60px; border: 0; border-radius: 18px;
+  background: var(--tinta); color: var(--blanco);
+  font: 700 17px 'IBM Plex Sans', sans-serif;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  cursor: pointer;
+}
+
+.btn-oscuro-ancho:disabled, .btn-principal:disabled { opacity: 0.6; }

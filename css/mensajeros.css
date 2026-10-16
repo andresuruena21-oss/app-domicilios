@@ -1,0 +1,28 @@
+/* ===== Pantalla: Mensajeros ===== */
+.agregar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
+.agregar .btn-principal { height: 50px; padding: 0 18px; font-size: 16px; }
+
+.lista-mensajeros { background: var(--blanco); border: 1px solid var(--borde); border-radius: 16px; }
+
+.mensajero {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 14px;
+  border-bottom: 1px solid #EEF1EE;
+}
+
+.mensajero:last-child { border-bottom: 0; }
+.mensajero .nombre { flex: 1; min-width: 0; font-size: 17px; font-weight: 600; }
+.mensajero.inactivo .nombre { color: var(--gris); text-decoration: line-through; }
+.mensajero .input-texto { flex: 1; min-width: 0; height: 44px; }
+
+.btn-chico {
+  height: 40px; padding: 0 12px;
+  border: 1.5px solid #C9D1CC; border-radius: 12px;
+  background: var(--blanco);
+  font: 600 13px 'IBM Plex Sans', sans-serif; color: var(--tinta);
+  cursor: pointer; flex-shrink: 0;
+}
+
+.btn-chico.guardar { background: var(--tinta); border-color: var(--tinta); color: var(--blanco); }
+.btn-chico.apagar { color: #B91C1C; border-color: #FCA5A5; }
+.btn-chico.encender { color: #14532D; border-color: #86C79C; }

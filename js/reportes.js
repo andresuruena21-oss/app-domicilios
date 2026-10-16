@@ -264,42 +264,15 @@ function bloqueMensajeros() {
 }
 
 // ===== Exportar a Excel (archivo CSV) =====
+// ===== Exportar a Excel (usa js/exportar.js) =====
 function exportar() {
   if (!pedidos.length) {
     dejarAviso('error', 'No hay pedidos para exportar en este periodo.');
     mostrarAviso();
     return;
   }
-
-  const columnas = ['Fecha', 'Hora', 'Factura', 'Mensajero', 'Barrio', 'Productos', 'Domicilio', 'Total', 'Pago', 'Gaseosa', 'Liquidado'];
-  const filas = pedidos.map((p) => {
-    const f = new Date(p.fecha);
-    return [
-      f.toLocaleDateString('es-CO'),
-      f.toLocaleTimeString('es-CO', { hour: '2-digit', minute: '2-digit' }),
-      p.factura,
-      p.mensajeros ? p.mensajeros.nombre : '',
-      p.barrio,
-      p.valor_productos,
-      p.valor_domicilio,
-      p.valor_productos + p.valor_domicilio,
-      p.pago === 'nequi' ? 'Nequi' : 'Efectivo',
-      p.gaseosa ? 'Sí' : 'No',
-      p.liquidado ? 'Sí' : 'No'
-    ];
-  });
-
-  // Excel en español usa punto y coma (;) para separar columnas
-  const limpiar = (v) => '"' + String(v).replace(/"/g, '""') + '"';
-  const texto = [columnas, ...filas].map((fila) => fila.map(limpiar).join(';')).join('\r\n');
-
-  // El "\uFEFF" al inicio hace que Excel lea bien las tildes y la ñ
-  const archivo = new Blob(['\uFEFF' + texto], { type: 'text/csv;charset=utf-8' });
-  const enlace = document.createElement('a');
-  enlace.href = URL.createObjectURL(archivo);
-  enlace.download = `domicilios-${periodo}-${new Date().toISOString().slice(0, 10)}.csv`;
-  enlace.click();
-  URL.revokeObjectURL(enlace.href);
+  descargarCSV(pedidos, `domicilios-${periodo}-${fechaParaArchivo()}.csv`);
 }
+
 
 iniciar();

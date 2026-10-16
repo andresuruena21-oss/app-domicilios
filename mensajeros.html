@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mensajeros · App Domicilios</title>
+    <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#C2410C">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/nuevo.css">
+  <link rel="stylesheet" href="css/mensajeros.css">
+</head>
+<body>
+  <main id="contenido" class="pantalla" hidden>
+    <div class="barra-superior">
+      <a href="menu.html" class="btn-volver" aria-label="Volver al menú">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg>
+      </a>
+      <h1>Mensajeros</h1>
+    </div>
+
+    <!-- Agregar uno nuevo -->
+    <form id="form-agregar" class="agregar">
+      <input id="nuevo-nombre" class="input-texto" placeholder="Nombre del mensajero" autocomplete="off" aria-label="Nombre del mensajero">
+      <button type="submit" class="btn-principal">Agregar</button>
+    </form>
+
+    <!-- Lista (la pone el JavaScript) -->
+    <div id="lista" class="lista-mensajeros"></div>
+
+    <div class="ayuda">
+      Desactivar oculta al mensajero de los botones, pero conserva todos sus pedidos en los reportes.
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/sesion.js"></script>
+  <script src="js/mensajeros.js"></script>
+</body>
+</html>

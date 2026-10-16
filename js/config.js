@@ -4,3 +4,6 @@ const SUPABASE_KEY = 'sb_publishable_DxI5mqDoTVZFXf-4dbtlVg_3thP_ad9';
 
 // 2. Conexión a la base de datos (no tocar)
 const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}

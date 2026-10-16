@@ -35,6 +35,7 @@ function mostrarAviso() {
   sessionStorage.removeItem('aviso');
 
   const { tipo, texto } = JSON.parse(guardado);
+  document.querySelectorAll('.aviso').forEach((a) => a.remove());
   const aviso = document.createElement('div');
   aviso.className = 'aviso aviso-' + tipo;
   aviso.setAttribute('role', 'status');
